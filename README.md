@@ -1,5 +1,5 @@
 # SweetAlertBlazor
-A simple Blazor implementation of [SweetAlert](https://sweetalert.js.org "SweetAlert") (a popular javascript modal popups library) 
+A simple yet fully configurable Blazor implementation of [SweetAlert](https://sweetalert.js.org "SweetAlert") (a popular javascript modal popups library) 
 
 All the methods are defined as Extension Methods on IJSRuntime so no need to inject any additional service
 
