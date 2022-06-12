@@ -124,7 +124,7 @@ namespace SweetAlertBlazor
             Icon = icon;
             return this;
         }
-        public SwalModel WithCssClassName(string cssClassName)
+        public SwalModel WithCssClass(string cssClassName)
         {
             ClassName = cssClassName;
             return this;
@@ -134,7 +134,7 @@ namespace SweetAlertBlazor
             HideAfterMiliseconds = afterSeconds * 1000;
             return this;
         }
-        public SwalModel SetClosings(bool closeOnEscButton = true, bool closeOnOutsideClick = true)
+        public SwalModel SetClosingOptions(bool closeOnEscButton = true, bool closeOnOutsideClick = true)
         {
             CloseOnClickOutside = closeOnOutsideClick;
             CloseOnEsc = closeOnEscButton;
@@ -146,6 +146,11 @@ namespace SweetAlertBlazor
             return this;
         }
         public SwalModel WithButtons(IEnumerable<Button> buttons)
+        {
+            AddButtons(buttons);
+            return this;
+        }
+        public SwalModel WithButtons(params Button[] buttons)
         {
             AddButtons(buttons);
             return this;

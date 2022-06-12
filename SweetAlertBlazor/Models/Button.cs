@@ -58,7 +58,7 @@ namespace SweetAlertBlazor
                 Text = text;
                 return this;
             }            
-            public Button WithCssClassName(string cssClassName)
+            public Button WithCssClass(string cssClassName)
             {
                 ClassName = cssClassName;
                 return this;
