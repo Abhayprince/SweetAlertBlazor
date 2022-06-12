@@ -126,5 +126,6 @@ var swalModel =
 	.WithIcon(SweetAlert.Icon.Error)
 	.WithCssClass("custom-css-class")
 	.WithButton(SweetAlert.Button.Ok()) // OR .WithButtons(SweetAlert.Button.Ok(), SweetAlert.Button.Cancel())
-	.SetClosingOptions(closeOnEscButton: true, closeOnOutsideClick: false);
+	.SetClosingOptions(closeOnEscButton: true, closeOnOutsideClick: false)
+	.AutoHide(afterSeconds: 5);
 ```
