@@ -2,6 +2,9 @@
 
 namespace SweetAlertBlazor
 {
+    /// <summary>
+    /// Sweet Alert Options Configuration Model
+    /// </summary>
     public partial class SwalModel
     {
         /// <summary>
@@ -71,6 +74,10 @@ namespace SweetAlertBlazor
             SetClickActions(Buttons);
         }
 
+        /// <summary>
+        /// Adds a button to the modal
+        /// </summary>
+        /// <param name="button">Button to be added</param>
         public void AddButton(Button button)
         {
             Buttons.Add(button);
@@ -79,6 +86,11 @@ namespace SweetAlertBlazor
             else if (button.OnClickAsync is not null)
                 _clickAsyncActions.Add(button.InternalValue, button.OnClickAsync);
         }
+
+        /// <summary>
+        /// Adds multiple buttons to the modal
+        /// </summary>
+        /// <param name="buttons">Buttons to be added</param>
         public void AddButtons(IEnumerable<Button> buttons)
         {
             foreach (var button in buttons)

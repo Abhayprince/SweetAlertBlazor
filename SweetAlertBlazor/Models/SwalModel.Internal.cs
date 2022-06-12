@@ -1,26 +1,27 @@
-﻿using static SweetAlertBlazor.SweetAlert;
+﻿using Constants = SweetAlertBlazor.SwalConstants;
+using static SweetAlertBlazor.SweetAlert;
 
 namespace SweetAlertBlazor
 {
-    /// <summary>
     /// Internal Methods
-    /// </summary>
     public partial class SwalModel
     {
-        public const string DefaultModalClass = "swal-blazor-modal";
-        public const string DefaultButtonClass = "swal-blazor-btn";
-
         /// <summary>
         /// SweetAlert javascript icon names mapping
         /// </summary>
         private static readonly IReadOnlyDictionary<Icon, string> _sweetAlertIcons = new Dictionary<Icon, string>
         {
-            [Icon.Warning] = "warning",
-            [Icon.Error] = "error",
-            [Icon.Success] = "success",
-            [Icon.Info] = "info",
+            [Icon.Warning] = Constants.IconNames.Warning,
+            [Icon.Error] = Constants.IconNames.Error,
+            [Icon.Success] = Constants.IconNames.Success,
+            [Icon.Info] = Constants.IconNames.Info,
         };
 
+        /// <summary>
+        /// Executes after the button is clicked
+        /// </summary>
+        /// <param name="btnKey"></param>
+        /// <returns></returns>
         internal Task OnAfterButtonClickAsync(string btnKey)
         {
             if (_clickActions.TryGetValue(btnKey, out var action) && action is not null)
@@ -31,6 +32,10 @@ namespace SweetAlertBlazor
             return Task.CompletedTask;
         }
 
+        /// <summary>
+        /// Converts the SwalModel to equivalent javascript options model to be used by swal js method
+        /// </summary>
+        /// <returns></returns>
         internal Options ToJsModel()
         {
             Options options = new()
@@ -41,7 +46,7 @@ namespace SweetAlertBlazor
                 closeOnClickOutside = CloseOnClickOutside,
                 timer = HideAfterMiliseconds,
                 closeOnEsc = CloseOnEsc,
-                className = $"{DefaultModalClass} {ClassName}".TrimEnd(),
+                className = $"{Constants.Css.DefaultModalClass} {ClassName}".TrimEnd(),
                 dangerMode = IsDangerMode
             };
 
@@ -56,7 +61,7 @@ namespace SweetAlertBlazor
                         text = btn.Text,
                         value = btn.InternalValue,
                         visible = btn.Visible,
-                        className = $"{DefaultButtonClass} {btn.ClassName}".TrimEnd(),
+                        className = $"{Constants.Css.DefaultButtonClass} {btn.ClassName}".TrimEnd(),
                         closeModal = btn.CloseModalOnClick,
                     });
                 }

@@ -1,4 +1,5 @@
-﻿namespace SweetAlertBlazor
+﻿using Constants = SweetAlertBlazor.SwalConstants;
+namespace SweetAlertBlazor
 {
     public static partial class SweetAlert
     {
@@ -50,21 +51,21 @@
             public Button(string text, Action onClickHandler) : this(text, visible: true, onClickHandler) { }
             public Button(string text, Func<Task> onClickAsyncHandler) : this(text, visible: true, onClickAsyncHandler) { }
 
-            public static Button Ok() => new("OK");
-            public static Button Ok(Action onClickHandler) => new("OK", onClickHandler);
-            public static Button Ok(Func<Task> onClickAsyncHandler) => new("OK", onClickAsyncHandler);
+            public static Button Ok() => new(Constants.ButtonTexts.Ok);
+            public static Button Ok(Action onClickHandler) => new(Constants.ButtonTexts.Ok, onClickHandler);
+            public static Button Ok(Func<Task> onClickAsyncHandler) => new(Constants.ButtonTexts.Ok, onClickAsyncHandler);
 
-            public static Button Yes() => new("Yes");
-            public static Button Yes(Action onClickHandler) => new("Yes", onClickHandler);
-            public static Button Yes(Func<Task> onClickAsyncHandler) => new("Yes", onClickAsyncHandler);
+            public static Button Yes() => new(Constants.ButtonTexts.Yes);
+            public static Button Yes(Action onClickHandler) => new(Constants.ButtonTexts.Yes, onClickHandler);
+            public static Button Yes(Func<Task> onClickAsyncHandler) => new(Constants.ButtonTexts.Yes, onClickAsyncHandler);
 
-            public static Button Cancel() => new("Cancel");
-            public static Button Cancel(Action onClickHandler) => new("Cancel", onClickHandler);
-            public static Button Cancel(Func<Task> onClickAsyncHandler) => new("Cancel", onClickAsyncHandler);
+            public static Button Cancel() => new(Constants.ButtonTexts.Cancel);
+            public static Button Cancel(Action onClickHandler) => new(Constants.ButtonTexts.Cancel, onClickHandler);
+            public static Button Cancel(Func<Task> onClickAsyncHandler) => new(Constants.ButtonTexts.Cancel, onClickAsyncHandler);
 
-            public static Button No() => new("No");
-            public static Button No(Action onClickHandler) => new("No", onClickHandler);
-            public static Button No(Func<Task> onClickAsyncHandler) => new("No", onClickAsyncHandler);
+            public static Button No() => new(Constants.ButtonTexts.No);
+            public static Button No(Action onClickHandler) => new(Constants.ButtonTexts.No, onClickHandler);
+            public static Button No(Func<Task> onClickAsyncHandler) => new(Constants.ButtonTexts.No, onClickAsyncHandler);
         }
     }
 }

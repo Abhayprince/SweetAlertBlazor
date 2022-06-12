@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -6,11 +6,11 @@
     <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Authors>Abhay Prince</Authors>
-    <Description>Blazor implementation for SweetAlert (a popular javascript modal popups library)</Description>
+    <Description>Blazor implementation of SweetAlert (a popular javascript modal popups library)</Description>
     <PackageProjectUrl>https://github.com/Abhayprince/SweetAlertBlazor</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Abhayprince/SweetAlertBlazor</RepositoryUrl>
-    <PackageTags>sweet alert,sweet alert blazor,swal,swal blazor,swal-blazor,sweet-alert,sweet-alert blazor,sweet-alert-blazor,sweetalertblazor</PackageTags>
-    <SignAssembly>False</SignAssembly>
+    <PackageTags>sweet-alert,swal,sweet-alert-blazor,swal-blazor,sweetalertblazor,sweet alert blazor,alert-blazor,confirm-popup-blazor,alert-popup-blazor</PackageTags>
+    <SignAssembly>True</SignAssembly>
   </PropertyGroup>
 
   <ItemGroup>
