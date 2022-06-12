@@ -4,6 +4,13 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Authors>Abhay Prince</Authors>
+    <Description>Blazor implementation for SweetAlert (a popular javascript modal popups library)</Description>
+    <PackageProjectUrl>https://github.com/Abhayprince/SweetAlertBlazor</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Abhayprince/SweetAlertBlazor</RepositoryUrl>
+    <PackageTags>sweet alert,sweet alert blazor,swal,swal blazor,swal-blazor,sweet-alert,sweet-alert blazor,sweet-alert-blazor,sweetalertblazor</PackageTags>
+    <SignAssembly>False</SignAssembly>
   </PropertyGroup>
 
   <ItemGroup>
