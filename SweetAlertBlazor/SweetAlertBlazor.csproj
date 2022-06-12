@@ -11,7 +11,7 @@
     <RepositoryUrl>https://github.com/Abhayprince/SweetAlertBlazor</RepositoryUrl>
     <PackageTags>sweet-alert,swal,sweet-alert-blazor,swal-blazor,sweetalertblazor,sweet alert blazor,alert-blazor,confirm-popup-blazor,alert-popup-blazor</PackageTags>
     <SignAssembly>True</SignAssembly>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
   </PropertyGroup>
 
   <ItemGroup>
