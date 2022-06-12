@@ -51,6 +51,40 @@ namespace SweetAlertBlazor
             public Button(string text, Action onClickHandler) : this(text, visible: true, onClickHandler) { }
             public Button(string text, Func<Task> onClickAsyncHandler) : this(text, visible: true, onClickAsyncHandler) { }
 
+            #region ----------- Builder ----------
+
+            public Button WithText(string text)
+            {
+                Text = text;
+                return this;
+            }            
+            public Button WithCssClassName(string cssClassName)
+            {
+                ClassName = cssClassName;
+                return this;
+            }
+            public Button WithClickHandler(Action onClick)
+            {
+                if (OnClickAsync is not null)
+                    throw new InvalidOperationException($"Only one click handler can be registered with the button. Found already registered async click handler");
+                OnClick = onClick;
+                return this;
+            }
+            public Button WithAsyncClickHandler(Func<Task> onClickAsync)
+            {
+                if (OnClick is not null)
+                    throw new InvalidOperationException($"Only one click handler can be registered with the button. Found already registered click handler");
+                OnClickAsync = onClickAsync;
+                return this;
+            }
+            public Button SetVisibilty(bool isVisible = true)
+            {
+                Visible = isVisible;
+                return this;
+            }
+
+            #endregion
+
             public static Button Ok() => new(Constants.ButtonTexts.Ok);
             public static Button Ok(Action onClickHandler) => new(Constants.ButtonTexts.Ok, onClickHandler);
             public static Button Ok(Func<Task> onClickAsyncHandler) => new(Constants.ButtonTexts.Ok, onClickAsyncHandler);

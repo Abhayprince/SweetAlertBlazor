@@ -7,10 +7,10 @@ namespace SweetAlertBlazor
     /// </summary>
     public partial class SwalModel
     {
-        /// <summary>
-        /// Type of the Modal popup. For Available Types see <see cref="SweetAlert.Type"/>
-        /// </summary>
-        public SweetAlert.Type Type { get; set; } = SweetAlert.Type.Alert;
+        ///// <summary>
+        ///// Type of the Modal popup. For Available Types see <see cref="SweetAlert.Type"/>
+        ///// </summary>
+        //public SweetAlert.Type Type { get; set; } = SweetAlert.Type.Alert;
 
         /// <summary>
         /// The title of the modal
@@ -42,11 +42,11 @@ namespace SweetAlertBlazor
         /// </summary>
         public bool CloseOnEsc { get; set; } = true;
 
-        /// <summary>
-        /// If set to true, the confirm button turns red and the default focus is set on the cancel button instead. 
-        /// This is handy when showing warning modals where the confirm action is dangerous (e.g. deleting an item).
-        /// </summary>
-        public bool IsDangerMode { get; set; } = false;
+        ///// <summary>
+        ///// If set to true, the confirm button turns red and the default focus is set on the cancel button instead. 
+        ///// This is handy when showing warning modals where the confirm action is dangerous (e.g. deleting an item).
+        ///// </summary>
+        //public bool IsDangerMode { get; set; } = false;
 
         /// <summary>
         /// Closes the modal after a certain amount of time (specified in mili-seconds). Useful to combine with {ShowButtons = false}
@@ -73,6 +73,8 @@ namespace SweetAlertBlazor
             Buttons = buttons;
             SetClickActions(Buttons);
         }
+        public SwalModel(string text) : this(text, null!) { }
+        public SwalModel(string text, string title) : this() => (Text, Title) = (text, title);
 
         /// <summary>
         /// Adds a button to the modal
@@ -98,6 +100,58 @@ namespace SweetAlertBlazor
                 AddButton(button);
             }
         }
+
+        #region ------------ Builder --------
+
+        public SwalModel WithText(string text)
+        {
+            Text = text;
+            return this;
+        }
+        public SwalModel WithTitle(string title)
+        {
+            Title = title;
+            return this;
+        }
+        public SwalModel WithTextAndTitle(string text, string title)
+        {
+            Text = text;
+            Title = title;
+            return this;
+        }
+        public SwalModel WithIcon(Icon icon)
+        {
+            Icon = icon;
+            return this;
+        }
+        public SwalModel WithCssClassName(string cssClassName)
+        {
+            ClassName = cssClassName;
+            return this;
+        }
+        public SwalModel AutoHide(int afterSeconds = 5)
+        {
+            HideAfterMiliseconds = afterSeconds * 1000;
+            return this;
+        }
+        public SwalModel SetClosings(bool closeOnEscButton = true, bool closeOnOutsideClick = true)
+        {
+            CloseOnClickOutside = closeOnOutsideClick;
+            CloseOnEsc = closeOnEscButton;
+            return this;
+        }
+        public SwalModel WithButton(Button button)
+        {
+            AddButton(button);
+            return this;
+        }
+        public SwalModel WithButtons(IEnumerable<Button> buttons)
+        {
+            AddButtons(buttons);
+            return this;
+        }
+
+        #endregion
 
         private void SetClickActions(IEnumerable<Button> buttons)
         {

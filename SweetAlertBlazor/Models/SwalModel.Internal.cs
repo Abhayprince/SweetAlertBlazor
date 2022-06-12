@@ -47,7 +47,7 @@ namespace SweetAlertBlazor
                 timer = HideAfterMiliseconds,
                 closeOnEsc = CloseOnEsc,
                 className = $"{Constants.Css.DefaultModalClass} {ClassName}".TrimEnd(),
-                dangerMode = IsDangerMode
+                //dangerMode = IsDangerMode
             };
 
             if (!ShowButtons)
