@@ -4,7 +4,7 @@ A simple yet fully configurable Blazor implementation of [SweetAlert](https://sw
 All the methods are defined as Extension Methods on IJSRuntime so no need to inject any additional service
 
 ### Usage
-1. Install the `SweetAlertBlazor` package to your blazor application. [https://www.nuget.org/packages/BlazorStorage/]
+1. Install the `SweetAlertBlazor` package to your blazor application. [https://www.nuget.org/packages/SweetAlertBlazor]
 
 2. Add the SweetAlert script reference to your *`index.html` (for Blazor WebAssembly)* or *`_Host.cshtml` (for Blazor Server)*
 
